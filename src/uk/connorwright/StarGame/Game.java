@@ -323,7 +323,7 @@ public class Game extends Canvas implements Runnable {
 
 	// begin main method
 	public static void main(String[] args) {
-		startGame();
+		Splash();
 
 	}
 
@@ -331,13 +331,9 @@ public class Game extends Canvas implements Runnable {
 	public static void Splash() {
 		SplashScreen splash = new SplashScreen(3000);
 		splash.showSplash();
-		launcher();
-	}
-
-	// launcher
-	public static void launcher() {
 		startGame();
 	}
+
 
 	// start game
 	public static void startGame() {
