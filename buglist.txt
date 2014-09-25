@@ -1,0 +1,46 @@
+Any help with these bugs will be greatly appreciated!:
+
+Game.java:
+
+1 - g.drawImage(player, 100, 100, this);
+Bug:
+Unwritten field: uk.connorwright.StarGame.Game.player
+
+2 - private void drawSplash(Graphics g) {
+		g.setColor(Color.WHITE);
+	                                          // BUG HERE	g.setFont(font2);
+		g.drawString(itemDisplayed, 150, 120);
+
+	}
+	
+Bug:
+Unwritten field: uk.connorwright.StarGame.Game.font2
+
+
+3 - 	uk.connorwright.StarGame.menu.Menu.main(null);
+Bug: 
+Null passed for nonnull parameter of uk.connorwright.StarGame.menu.Menu.main(String[]) in uk.connorwright.StarGame.Game.keyPressed(KeyEvent)
+(This is normal, apparently.)
+
+Menu.java: 
+
+1 - credtis = true;
+Bug:
+(Yes credits is spelt incorrectly, it's intentional) Write to static field uk.connorwright.StarGame.menu.Menu.credtis from instance method uk.connorwright.StarGame.menu.Menu.jButton3_ActionPerformed(ActionEvent)
+
+
+2 - Game.main(null);
+Bug:
+Bug: Null passed for nonnull parameter of uk.connorwright.StarGame.menu.Menu.main(String[]) in uk.connorwright.StarGame.Game.keyPressed(KeyEvent)
+(This is normal, apparently.)
+
+StartGame.java: 
+
+1 - uk.connorwright.StarGame.Game.main(null);
+Null passed for nonnull parameter of uk.connorwright.StarGame.menu.Menu.main(String[]) in uk.connorwright.StarGame.Game.keyPressed(KeyEvent)
+(This is normal, apparently.)
+
+Any help would be greatly appreciated, once again.
+
+Thanks
+
