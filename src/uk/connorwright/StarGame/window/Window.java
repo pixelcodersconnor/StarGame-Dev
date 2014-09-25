@@ -12,6 +12,9 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import uk.connorwright.StarGame.window.commands.God;
+import uk.connorwright.StarGame.window.commands.Restart;
+import uk.connorwright.StarGame.window.commands.StartGame;
+import uk.connorwright.StarGame.window.commands.dev.NextState;
 
 public class Window {
 	final static JTextField commandField = new JTextField(40);
@@ -39,8 +42,28 @@ public class Window {
 				command = commandField.getText();
 				if (command.equals("god")) {
 					God.godMode();
-					commandField.selectAll();
-					commandField.cut();
+					clearField();
+				} 
+
+				if (command.equals("restart")) {
+					Restart.restartGame();
+					clearField();
+				}
+
+
+
+				if(command.equals("devoverride")) {
+					System.out.println("Dev Override Activated");
+					clearField();
+				}
+
+				if(command.equals("nextstate")) {
+					NextState.toggleState();
+					clearField();
+				}
+
+				if(command.equals("startgame")) {
+					StartGame.newGame();
 				}
 			}
 		});
@@ -56,5 +79,10 @@ public class Window {
 
 	public static void main(String[] args) {
 		makeFrame();
+	}
+
+	private static void clearField(){
+		commandField.selectAll();
+		commandField.cut();
 	}
 }

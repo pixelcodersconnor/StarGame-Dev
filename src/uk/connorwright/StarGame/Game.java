@@ -335,6 +335,7 @@ public class Game extends Canvas implements Runnable {
 	}
 
 
+
 	// start game
 	public static void startGame() {
 		Game game = new Game();
