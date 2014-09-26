@@ -15,9 +15,11 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import uk.connorwright.StarGame.audio.Sound;
 import uk.connorwright.StarGame.window.commands.God;
 import uk.connorwright.StarGame.window.commands.Restart;
 import uk.connorwright.StarGame.window.commands.dev.NextState;
+import uk.connorwright.StarGame.window.commands.help.DisplayCommands;
 import uk.connorwright.StarGame.window.console.TextAreaOutputStream;
 
 public class Window {
@@ -47,6 +49,7 @@ public class Window {
 		submit.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent evt) {
+				Sound.selectEffect.play();
 				command = commandField.getText();
 				if (command.equals("god")) {
 					System.out.println("God mode activated, check in-game!");
@@ -70,6 +73,18 @@ public class Window {
 
 					clearField();
 
+				}
+
+				if(command.equals("help")) {
+					DisplayCommands.showHelp();
+
+					clearField();
+				}
+
+				if(command.contains("")) {
+					System.out.println("You need to input a command first!");
+
+					clearField();
 				}
 
 			}
