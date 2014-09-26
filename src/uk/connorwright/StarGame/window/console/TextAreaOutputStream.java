@@ -6,6 +6,8 @@ import java.io.OutputStream;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
+// Create console alternative to be printed on the command GUI
+
 public class TextAreaOutputStream extends OutputStream {
 	private final JTextArea textArea;
 	private final StringBuilder sb = new StringBuilder();
