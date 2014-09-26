@@ -11,6 +11,7 @@ public class NextState {
 
 		} else if (Game.State == STATE.MENU) {
 			Game.State = STATE.GAME;
+			Game.HEALTH = 200;
 		}
 	}
 
