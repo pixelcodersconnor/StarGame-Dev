@@ -7,7 +7,10 @@ public class God {
 
 	public static void godMode() {
 		if (Game.State == STATE.GAME) {
-			Game.HEALTH = 1000000;
+			for(int i = 0; i < Game.HEALTH; i++) {
+				Game.HEALTH = 1000000;	
+			}
+			
 		} else {
 			System.out.println("You must be in-game!");
 		}

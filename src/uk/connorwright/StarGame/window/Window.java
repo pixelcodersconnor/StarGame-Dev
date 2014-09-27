@@ -15,6 +15,8 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import uk.connorwright.StarGame.Game;
+import uk.connorwright.StarGame.Game.STATE;
 import uk.connorwright.StarGame.audio.Sound;
 import uk.connorwright.StarGame.window.commands.God;
 import uk.connorwright.StarGame.window.commands.Restart;
@@ -51,37 +53,44 @@ public class Window {
 			public void actionPerformed(ActionEvent evt) {
 				Sound.selectEffect.play();
 				command = commandField.getText();
-				if (command.equals("god")) {
+				if (command.equalsIgnoreCase("god")) {
 					System.out.println("God mode activated, check in-game!");
 					God.godMode();
 					clearField();
 
 				}
 
-				if (command.equals("restart")) {
+				if (command.equalsIgnoreCase("restart")) {
+					System.out.println("Restarting game...");
 					Restart.restartGame();
 					clearField();
 				}
 
-				if (command.equals("devoverride")) {
+				if (command.equalsIgnoreCase("devoverride")) {
 					System.out.println("Dev Override Activated");
 					clearField();
 				}
 
-				if (command.equals("nextstate")) {
-					NextState.toggleState();
+				if (command.equalsIgnoreCase("nextstate")) {
+					if (Game.State == STATE.MENU) {
+						System.out.println("Switching to game state...");
+						NextState.toggleState();
+					} else if (Game.State == STATE.GAME) {
+						System.out.println("Switching to menu state...");
+						NextState.toggleState();
+					}
 
 					clearField();
 
 				}
 
-				if(command.equals("help")) {
+				if (command.equalsIgnoreCase("help")) {
 					DisplayCommands.showHelp();
 
 					clearField();
 				}
 
-				if(command.contains("")) {
+				if (command.contains("")) {
 					System.out.println("You need to input a command first!");
 
 					clearField();
