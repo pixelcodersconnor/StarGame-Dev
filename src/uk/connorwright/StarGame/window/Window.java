@@ -90,8 +90,10 @@ public class Window {
 					clearField();
 				}
 
-				if (command.contains("")) {
-					System.out.println("You need to input a command first!");
+
+				if(!command.equalsIgnoreCase("nextstate") && !command.equals("god") && !command.equalsIgnoreCase("restart") && !command.equalsIgnoreCase("devoverride") && !command.equalsIgnoreCase("help")) {
+					System.out.println("Invalid command! Please type help");
+					System.out.println(" for a list of commands");
 
 					clearField();
 				}
